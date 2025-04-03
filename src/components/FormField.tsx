@@ -3,14 +3,14 @@ import SuccessMessage from './SuccessMessage'
 
 type FormFieldProps = {
   id: string
-  label: string
+  label?: string
   name: string
   type?: string
   autoComplete?: string
   touched?: boolean
   error?: string
-  placeholder: string
-  successMessage: string
+  placeholder?: string
+  successMessage?: string
 }
 
 const FormField = ({

@@ -95,9 +95,11 @@ button:focus-visible {
 
 .checkbox-group {
   display: flex;
-  align-items: center;
-  margin-top: 10px;
-  gap: 20px;
+  gap: 8px;
+}
+
+.checkbox-input {
+  width: 4%;
 }
 
 #subscribe {
