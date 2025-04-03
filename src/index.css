@@ -97,6 +97,7 @@ button:focus-visible {
   display: flex;
   align-items: center;
   margin-top: 10px;
+  gap: 20px;
 }
 
 #subscribe {

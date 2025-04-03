@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { object, string } from 'yup'
 import FormField from './FormField'
+import CheckboxField from './CheckboxField'
 
 const validationSchema = object({
   login: string()
@@ -75,18 +76,12 @@ const RegisterForm = () => {
             autoComplete="new-password"
           />
 
-          {/* Checkbox group needs its own CheckboxField component */}
+          {/* Checkbox group ? */}
           <div className="checkbox-group">
-            <Field type="checkbox" id="subscribe" name="subscribe" />
+            <CheckboxField id={`checkbox-${randomSuffix}`} name="subscribe" />
             <label htmlFor="subscribe">Subscribe to Our Newsletter</label>
           </div>
-          <FormField
-            id={`checkbox-${randomSuffix}`}
-            label="Subscribe to Our Newsletter"
-            name="subscribe"
-            placeholder="subscribe"
-            successMessage="Checkbox"
-          />
+
           <button type="submit" disabled={!isValid}>
             Register
           </button>
