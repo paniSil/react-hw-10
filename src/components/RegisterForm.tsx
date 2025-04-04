@@ -10,8 +10,8 @@ const validationSchema = object({
     .matches(/^[A-Za-z][A-Za-z0-9]*$/, 'Login must start with letter and should not contain special symbols'),
   email: string()
     .required('E-mail is required')
-    .min(8, 'E-mail must be at least 8 characters long')
-    .max(30, 'E-mail must be less than 30 characters long')
+    .min(6, 'E-mail must be at least 6 characters long')
+    .max(256, 'E-mail must be less than 256 characters long')
     .matches(/^[\w._+-]+@([a-z]+\.[a-z]{2,3})+$/, 'E-mail must be a valid e-mail address'),
   password: string()
     .required('Password is required')
