@@ -30,9 +30,11 @@ const FormField = ({
       : { autoComplete: 'off', autoCorrect: 'off', autoCapitalize: 'off', spellCheck: 'false' }
 
   return (
-    <div className="form-group">
-      <label htmlFor={id}>{label}</label>
-      <Field id={id} name={name} type={type} {...autoCompleteProps} placeholder={placeholder} />
+    <div className={`${type === 'checkbox' ? 'checkbox-group' : 'form-group'}`}>
+      <div>
+        <label htmlFor={id}>{label}</label>
+        <Field id={id} name={name} type={type} {...autoCompleteProps} placeholder={placeholder} />
+      </div>
       <ErrorMessage name={name} component="div" className="error" />
       {successMessage && <SuccessMessage message={successMessage} touched={touched} error={error} />}
     </div>

@@ -1,5 +1,5 @@
 import { Formik, Form } from 'formik'
-import { object, string } from 'yup'
+import { boolean, object, string } from 'yup'
 import FormField from './FormField'
 
 const validationSchema = object({
@@ -16,7 +16,8 @@ const validationSchema = object({
   password: string()
     .required('Password is required')
     .min(8, 'Password must be at least 8 characters long')
-    .max(20, 'Password must be less than 20 characters long')
+    .max(20, 'Password must be less than 20 characters long'),
+  subscribe: boolean().oneOf([true], 'Please, agree to Terms of Use')
 })
 
 const initialValues = {
@@ -78,10 +79,9 @@ const RegisterForm = () => {
             autoComplete="new-password"
           />
 
-          {/* Checkbox group ? */}
           <div className="checkbox-group">
-            <FormField id={`checkbox-${randomSuffix}`} type="checkbox" name="subscribe" />
-            <label htmlFor="subscribe">Subscribe to Our Newsletter</label>
+            <FormField id="subscribe" type="checkbox" name="subscribe" error={errors.subscribe} />
+            {(!errors.subscribe || !touched.subscribe) && <label htmlFor="subscribe">Agree to Terms of Use</label>}
           </div>
 
           <button type="submit" disabled={!isValid}>

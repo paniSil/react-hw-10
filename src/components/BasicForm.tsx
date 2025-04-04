@@ -52,7 +52,7 @@ const BasicForm = () => {
           <ErrorMessage name="password" component="div" className="error" />
         </div>
         <div className="checkbox-group">
-          <Field type="checkbox" id="subscribe" name="subscribe" />
+          <Field className="checkbox-input" type="checkbox" id="subscribe" name="subscribe" />
           <label htmlFor="subscribe">Subscribe to Our Newsletter</label>
         </div>
         <button type="submit">Register</button>

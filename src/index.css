@@ -19,6 +19,10 @@
   padding: 0;
 }
 
+body {
+  display: flex;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -52,7 +56,6 @@ input {
 
 label {
   display: block;
-  margin-bottom: 10px;
 }
 
 button {
@@ -102,15 +105,30 @@ button:focus-visible {
   width: 4%;
 }
 
-#subscribe {
-  width: auto;
-  margin-right: 8px;
-}
-
 .error {
   color: red;
 }
 
 .success {
   color: green;
+}
+
+ul {
+  list-style-type: none;
+  flex-direction: row;
+}
+
+li {
+  display: inline;
+  padding: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.field-container {
+  display: flex;
+  align-items: center;
 }
