@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, NavLink, Routes, Route } from 'react-router'
 import BasicForm from './BasicForm'
 import RegisterForm from './RegisterForm'
